@@ -1,5 +1,5 @@
 {% set name = "amundsen-databuilder" %}
-{% set version = "7.4.3" %}
+{% set version = "7.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/amundsen-databuilder-{{ version }}.tar.gz
-  sha256: d0e99edc42c70c14d5a0ed7ccdb40c81c44680267676e85c1fc4f0f11096972d
+  sha256: d485860a13ad8fb26aafae21fdd4af644192dc256da6a641c93b0bcb66492f95
 
 build:
   noarch: python
@@ -51,7 +51,7 @@ test:
   imports:
     - databuilder
     - example
-    
+
 # Pip check disabled
 # amundsen-databuilder 7.4.3 requires neo4j-driver, which is not installed.    
 
