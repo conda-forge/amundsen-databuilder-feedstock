@@ -1,5 +1,5 @@
 {% set name = "amundsen-databuilder" %}
-{% set version = "7.4.6" %}
+{% set version = "7.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/amundsen-databuilder-{{ version }}.tar.gz
-  sha256: 6a850bac0b350fc0fdb71e35724e3080e4f653b258b27285d7993dcb232a999c
+  sha256: b03578fe09764ae909ee51c870f003de348230f9db20e7968aaf40227aef0c76
 
 build:
   noarch: python
