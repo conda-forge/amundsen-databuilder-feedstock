@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/amundsen-databuilder-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/amundsen-databuilder-{{ version }}.tar.gz
   sha256: 8ec6949aee68ac943d7a6dc0a460603cdab430d0631fb210c1c5a082b84246f3
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - elasticsearch >=6.2.0,<8.0
     - elasticsearch-dsl >=7.4.0
     - neo4j-python-driver >=4.4.5,<5.0 # neo4j-driver same as neo4j-python-driver
@@ -48,6 +48,8 @@ requirements:
     - amundsen-rds ==0.0.7
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - databuilder
     - example
